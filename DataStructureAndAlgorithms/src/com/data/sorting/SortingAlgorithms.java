@@ -9,8 +9,9 @@ public class SortingAlgorithms {
 		System.out.print("Unsorted Data \n" );
 		for(int num: nums)
 		System.out.print(num + " ");
-		
-		bubbleSort(nums);
+		System.out.println();
+		//bubbleSort(nums);
+		selectionSort(nums);
 	}
 	
 	private static void bubbleSort(int nums[]) {
@@ -39,9 +40,37 @@ public class SortingAlgorithms {
 		}
 	}
 	
+	private static void selectionSort(int nums[]) {
+		int maxIndex=-1;
+		int size=nums.length;
+		int temp=0;
+		
+		
+		for(int i=0; i<size-1;i++) {
+
+			maxIndex=i;
+			for(int j=i+1; j<size;j++) {
+				
+				if(nums[maxIndex] > nums[j]) {
+					maxIndex=j;
+				}
+				
+			}
+			temp=nums[maxIndex];
+			nums[maxIndex]=nums[i];
+			nums[i]=temp;
+			System.out.println();
+			for(int num: nums) {
+				System.out.print(num + " ");
+			}
+		}
+		
+		
+	}
 	private static int[] unSortedData() {
 		
-		int nums[] = {12,42,23,24,14,25,65,33,55,84};
+		int nums[] = {12,42,2,24,14};
 		return nums;
 	}
+	
 }
