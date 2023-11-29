@@ -69,7 +69,7 @@ public class SortingAlgorithms {
 	}
 	private static int[] unSortedData() {
 		
-		int nums[] = {12,42,2,24,14};
+		int nums[] = {12,42,2,24,14,44};
 		return nums;
 	}
 	
