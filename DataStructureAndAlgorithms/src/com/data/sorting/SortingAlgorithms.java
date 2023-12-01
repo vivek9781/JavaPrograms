@@ -7,11 +7,13 @@ public class SortingAlgorithms {
 
 		int nums[] = unSortedData();
 		System.out.print("Unsorted Data \n" );
-		for(int num: nums)
+		for(int num: nums) {
 		System.out.print(num + " ");
-		System.out.println();
+		}
+		System.out.println("\n**************");
 		//bubbleSort(nums);
-		selectionSort(nums);
+		//selectionSort(nums);
+		insertionSort(nums);
 	}
 	
 	private static void bubbleSort(int nums[]) {
@@ -66,6 +68,34 @@ public class SortingAlgorithms {
 		}
 		
 		
+	}
+	
+	private static void insertionSort(int nums[]) {
+		// 4,2,8,5,3
+		
+		int key=0;
+		int size=nums.length;
+		//int temp=0;
+		
+		for(int i=1; i<size;i++) {
+
+			key=nums[i];
+			int j=i-1;
+			
+			while(j>=0 && nums[j] > key) {
+			
+				nums[j+1]=nums[j];
+				j--;
+			}
+			
+			nums[j+1]=key;
+			
+		}
+		
+		System.out.println("Sorted Data \n");
+		for(int num: nums) {
+			System.out.print(num + " ");
+		}
 	}
 	private static int[] unSortedData() {
 		
